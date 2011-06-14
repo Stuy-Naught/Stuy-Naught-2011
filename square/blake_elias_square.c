@@ -12,23 +12,26 @@ void ZRUser01(float *myState, float *otherState, float time)
 float P[3];  // The point to move towards in (x, y, z) coordinates
 float dist;  // The distance we are from said point
  
-P[0] = 0.5;
-P[1] = 0.5;
-P[2] = 0.0; // point (0.5, 0.5, 0), first corner of our square
- 
 if (state == 0) {
-    // Don't need to do anything extra.
-    // The other states give the three other corners of the square.
+    // point (0.5, 0.5, 0), first corner of our square
+    P[0] = 0.5;
+    P[1] = 0.5;
+    P[2] = 0.0;
 }
 else if (state == 1) {
-    P[1] = P[1] * -1;  // negate x
+    P[0] = 0.5;
+    P[1] = -0.5;
+    P[2] = 0.0;
 }
 else if (state == 2) {
-    P[1] = P[1] * -1;  //negate x and y
-    P[0] = P[0] * -1;
+    P[0] = -0.5;
+    P[1] = -0.5;
+    P[2] = 0.0;
 }
 else if (state == 3) {
-    P[0] = P[0] * -1;   // negate y
+    P[0] = -0.5;
+    P[1] = 0.5;
+    P[2] = 0.0;
 }
  
 ZRSetPositionTarget(P);  // move towards point P
