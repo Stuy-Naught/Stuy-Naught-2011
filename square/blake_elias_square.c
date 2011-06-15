@@ -45,8 +45,9 @@ mathVecNormalize(V, 3);
 V[0] = V[0] * 0.03;
 V[1] = V[1] * 0.03;
 V[2] = V[2] * 0.03;
- 
-if (getPercentFuelRemaining() < 8) {
+
+// Slow down when almost out of fuel
+if (getPercentFuelRemaining() < 8) {  // replace 8 with the amount really needed?
     V[0] = 0;
     V[1] = 0;
     V[2] = 0;
